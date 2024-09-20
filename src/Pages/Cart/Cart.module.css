@@ -65,7 +65,8 @@
 }
 
 .subtotal a:hover {
-  background: var(--primary-shade);
+  /* background: var(--primary-shade); */
+  background: orange;
 }
 .subtotal > div,
 .subtotal span {

@@ -1,5 +1,5 @@
 import React from "react";
-import LayOut from "../../Components/LayOut/Layout";
+import LayOut from "../../Components/LayOut/LayOut.jsx";
 
 export default function Orders() {
   return (

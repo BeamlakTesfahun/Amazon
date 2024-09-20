@@ -61,7 +61,7 @@ function Header() {
             <span>Account & Lists</span>
           </Link>
           <Link to="/orders">
-            <p>returns</p>
+            <p>Returns</p>
             <span>& Orders</span>
           </Link>
           <Link to="/cart" className={classes.cart}>

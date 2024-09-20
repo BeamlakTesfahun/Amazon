@@ -1,11 +1,11 @@
 import React from "react";
 import { Rating } from "@mui/material";
-//import CurrencyFormat from "../CurrencyFormat/CurrencyFormat";
+import CurrencyFormat from "../CurrencyFormat/CurrencyFormat";
 import classes from "./Product.module.css";
 import { Link } from "react-router-dom";
-//import { DataContext } from "../DataProvider/DataProvider";
-//import { Type } from "../../Utility/action.type";
-//import { useContext } from "react";
+import { DataContext } from "../DataProvider/DataProvider";
+import { Type } from "../../Utility/action.type";
+import { useContext } from "react";
 
 function ProductCard({ product, flex, renderDesc, renderAdd }) {
   const { image, title, id, rating, price, description } = product;
@@ -24,6 +24,7 @@ function ProductCard({ product, flex, renderDesc, renderAdd }) {
         description,
       },
     });
+    console.log("Add to cart functionality is not available yet.");
   };
 
   return (

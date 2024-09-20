@@ -1,19 +1,20 @@
-import { useState } from "react";
-import "./App.css";
-import Header from "./Components/Header/Header";
-import Carousel from "./Components/Carousel/CarouselEffect";
-import Category from "./Components/Category/Category";
+import React, { useContext, useEffect } from "react";
+import Routing from "./Router";
+import { DataContext } from "./Components/DataProvider/DataProvider";
+import { Type } from "./Utility/action.type";
+//import { auth } from "./Utility/firebase";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [{ user }, dispatch] = useContext(DataContext);
 
-  return (
-    <>
-      <Header />
-      <Carousel />
-      <Category />
-    </>
-  );
+  useEffect(() => {
+    dispatch({
+      type: Type.SET_USER,
+      user: null,
+    });
+  }, []);
+
+  return <Routing />;
 }
 
 export default App;

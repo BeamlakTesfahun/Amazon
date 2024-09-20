@@ -7,7 +7,7 @@ export const categoryInfos = [
   },
   {
     title: "Discover fashion trends",
-    name: "Women's clothing",
+    name: "women's clothing",
     imgLink:
       "https://images-na.ssl-images-amazon.com/images/G/01/softlines/shopbop/ingress/2023/March/mp_20230219_ff_desktopsinglecategory_desktop_379x304_1._SY304_CB612639047_.jpg",
   },
@@ -19,7 +19,7 @@ export const categoryInfos = [
   },
   {
     title: "Jewelry",
-    name: "jewelry",
+    name: "jewelery",
     imgLink:
       "https://m.media-amazon.com/images/I/71r7eWuCsaL._AC_ul480_FMwebp_qL65_.jpg",
   },

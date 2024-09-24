@@ -10,7 +10,7 @@ import { useContext } from "react";
 // import { auth } from "../../Utility/firebase";
 
 function Header() {
-  const [{ user, basket }, dispatch] = useContext(DataContext);
+  const [{ basket }, dispatch] = useContext(DataContext);
   const totalItem = basket?.reduce((amount, item) => {
     return item.amount + amount;
   }, 0);
@@ -56,7 +56,7 @@ function Header() {
               <option value=""> EN</option>
             </select>
           </Link>
-          <Link to="">
+          <Link to="/auth">
             <p>Sign In</p>
             <span>Account & Lists</span>
           </Link>

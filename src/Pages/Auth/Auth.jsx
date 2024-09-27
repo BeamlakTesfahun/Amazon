@@ -28,7 +28,7 @@ function Auth() {
   const authHandler = async (e) => {
     e.preventDefault();
     console.log(e.target.name);
-    if (e.target.name == "sign in") {
+    if (e.target.name == "signin") {
       // firebase auth
       setLoading({ ...loading, signIn: true });
       signInWithEmailAndPassword(auth, email, password)
@@ -111,7 +111,7 @@ function Auth() {
           <button
             type="submit"
             onClick={authHandler}
-            name="sign in"
+            name="signin"
             className={classes.login__signInButton}
           >
             {loading.signIn ? <ClipLoader color="000" size={15} /> : "Sign In"}

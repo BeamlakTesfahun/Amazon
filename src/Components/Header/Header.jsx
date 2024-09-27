@@ -7,10 +7,10 @@ import { BiCart } from "react-icons/bi";
 import LowerHeader from "./LowerHeader";
 import { DataContext } from "../DataProvider/DataProvider";
 import { useContext } from "react";
-// import { auth } from "../../Utility/firebase";
+import { auth } from "../../Utility/firebase";
 
 function Header() {
-  const [{ basket }, dispatch] = useContext(DataContext);
+  const [{ user, basket }, dispatch] = useContext(DataContext);
   const totalItem = basket?.reduce((amount, item) => {
     return item.amount + amount;
   }, 0);
@@ -42,7 +42,7 @@ function Header() {
           </select>
           <input type="text" />{" "}
           {/* <input type="test" name="" id="" placeholder="search product"  />     */}
-          <BsSearch size={25} />
+          <BsSearch size={38} />
         </div>
         {/* other section */}
         <div className={classes.order__container}>
@@ -56,9 +56,21 @@ function Header() {
               <option value=""> EN</option>
             </select>
           </Link>
-          <Link to="/auth">
-            <p>Sign In</p>
-            <span>Account & Lists</span>
+          <Link to={!user && "/auth"}>
+            <div>
+              {user ? (
+                <>
+                  <p>Hello {user?.email?.split("@")[0]}</p>
+                  <span onClick={() => auth.signOut()}>Sign Out</span>
+                </>
+              ) : (
+                <>
+                  <p>Hello, sign In</p>
+                  <span>Sign Out</span>
+                </>
+              )}
+            </div>
+            {/* <span>Account & Lists</span>  */}
           </Link>
           <Link to="/orders">
             <p>Returns</p>
